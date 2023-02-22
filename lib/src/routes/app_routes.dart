@@ -1,7 +1,8 @@
-import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../screens/screens.dart';
 
-final appRoutes = <String, WidgetBuilder>{
-  'login': (BuildContext context) => const LoginScreen(),
-  'home': (BuildContext context) => const HomeScreen(),
-};
+final appRoutes = [
+  GetPage(name: '/', page: () => const LoginScreen()),
+  GetPage(name: '/register', page: () => const RegisterScreen()),
+  GetPage(name: '/home', page: () => const HomeScreen()),
+];

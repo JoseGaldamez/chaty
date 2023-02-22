@@ -1,39 +1,18 @@
 import 'package:chaty/src/themes/app_colors.dart';
 import 'package:flutter/material.dart';
 
-class LoginForm extends StatefulWidget {
-  const LoginForm({super.key});
+class RegisterForm extends StatelessWidget {
+  const RegisterForm({super.key});
 
-  @override
-  State<LoginForm> createState() => _LoginFormState();
-}
-
-class _LoginFormState extends State<LoginForm> {
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        _image(),
+        _image(context),
+        _emailField(),
         _emailField(),
         _passwordField(),
         _signInButton(),
-        _dontHaveAccount()
-      ],
-    );
-  }
-
-  Row _dontHaveAccount() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        const Text("¿No tienes cuenta?",
-            style: TextStyle(color: AppColors.primaryColor)),
-        TextButton(
-          onPressed: () {},
-          child: const Text("Regístrate",
-              style: TextStyle(
-                  color: AppColors.primaryColor, fontWeight: FontWeight.bold)),
-        )
       ],
     );
   }
@@ -49,7 +28,7 @@ class _LoginFormState extends State<LoginForm> {
                   borderRadius: BorderRadius.circular(30.0),
                 ),
                 padding: const EdgeInsets.symmetric(vertical: 15)),
-            child: const Text("Ingresar")),
+            child: const Text("Registrarse")),
       );
 
   Container _passwordField() {
@@ -88,12 +67,14 @@ class _LoginFormState extends State<LoginForm> {
     );
   }
 
-  Container _image() {
+  Container _image(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(
-          top: 50.0, bottom: MediaQuery.of(context).size.height * 0.2),
-      child: Image.asset("lib/src/assets/imgs/delivery.png",
-          width: 200, height: 200),
+      margin: const EdgeInsets.only(top: 120.0, bottom: 50.0),
+      child: const CircleAvatar(
+        radius: 60,
+        backgroundColor: AppColors.primaryOpacityColor,
+        backgroundImage: AssetImage("lib/src/assets/imgs/user_profile_2.png"),
+      ),
     );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:chaty/src/routes/app_routes.dart';
 import 'package:chaty/src/themes/principal_theme.dart';
+import 'package:get/get.dart';
 
 void main() => runApp(const RootApp());
 
@@ -14,11 +15,11 @@ class RootApp extends StatefulWidget {
 class _RootAppState extends State<RootApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Chaty',
       debugShowCheckedModeBanner: false,
-      initialRoute: 'login',
-      routes: appRoutes,
+      initialRoute: '/',
+      getPages: appRoutes,
       theme: principalTheme,
     );
   }
