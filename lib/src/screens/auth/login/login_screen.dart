@@ -31,7 +31,7 @@ class LoginScreen extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(width: double.infinity, child: LoginForm()),
+          SizedBox(width: double.infinity, child: LoginForm()),
         ],
       ),
     ));

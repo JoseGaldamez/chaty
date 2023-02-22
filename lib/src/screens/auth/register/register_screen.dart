@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../themes/app_colors.dart';
-import '../../widgets/auth/register_form/register_form.dart';
+import '../../../themes/app_colors.dart';
+import '../../../widgets/auth/register_form/register_form.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
@@ -46,7 +46,7 @@ class RegisterScreen extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(width: double.infinity, child: RegisterForm()),
+          SizedBox(width: double.infinity, child: RegisterForm()),
         ],
       ),
     ));
